@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+body {
+	background-color: #000;
+	margin: 0;
+	color: #fff;
+	font-family: sans-serif;
+}
+
+div.row {
+	div {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+	}
+	.brick {
+		background-color: #00f;
+	}
+	.coin {
+		background: url(../img/coin.gif) no-repeat center;
+	}
+	.empty {
+
+	}
+}
+
+.game {
+	position: relative;
+	width: 600px;
+	margin: 45px auto;
+}
+
+#pacman {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 99;
+	margin: 2px;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.score {
+
+}
