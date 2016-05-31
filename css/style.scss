@@ -12,42 +12,125 @@ body {
 
 div.row {
 	div {
-		width: 20px;
-		height: 20px;
+		width: 40px;
+		height: 40px;
 		display: inline-block;
 	}
 	.brick {
-		background-color: #00f;
+		background: url("../img/wall_gray.png");
 	}
-	.coin {
-		background: url(../img/coin.gif) no-repeat center;
+	.egg {
+		background: url("../img/egg.gif") no-repeat center;
 	}
-	.empty {
+	.item {
 
+		img {
+			top: 50%;
+			left: 50%;
+			margin-top: -8px;
+			margin-left: -8px;
+			position: relative;
+			box-shadow: 0 0 5px 3px rgba(255,122,55,1);
+			border-radius: 50%;
+		}
+	}
+	.bonus {
+		background: url("../img/bonus.gif") no-repeat center;
+	}
+	.gap {
+		background-color: #000;
 	}
 }
 
 .game {
 	position: relative;
-	width: 600px;
-	margin: 45px auto;
+	margin: 85px auto 0;
+	width: 1200px;
 }
 
-#pacman {
-	width: 16px;
-	height: 16px;
+.game_title {
 	position: absolute;
-	top: 20px;
-	left: 20px;
-	z-index: 99;
-	margin: 2px;
+	margin: 0;
+	top: -62px;
+	font-size: 3rem;
+	font-weight: 500;
+	letter-spacing: 1.4px;
+}
+
+#world {
+	background-image: url("../img/wall_gray_dark.png");
+	background-size: 40px 40px;
+}
+
+#snake {
+	top: 40px;
+	left: 40px;
 
 	img {
-		width: 100%;
+		width: 46px;
 		height: auto;
+		position: relative;
+		top: -5px;
+		left: -5px;
 	}
 }
 
-.score {
-
+.segment,
+#snake {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	z-index: 99;
+	margin-top: 1.5px;
+	margin-left: 1.5px;
 }
+
+.segment {
+	height: 26px;
+	width: 26px;
+	margin-top: 7px;
+	margin-left: 7px;
+	background-color: #00A388;
+	box-shadow: inset 0 0 4px rgba(0,0,0,0.4);
+}
+
+.score {
+	p {
+		display: inline-block;
+		width: 50%;
+		font-size: 2rem;
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
