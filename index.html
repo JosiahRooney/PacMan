@@ -10,8 +10,9 @@
 <body>
 	<div class="game">
 		<h1 class="game_title">SnakeMaze</h1>
-		<div id="world"></div>
 		<div class="snake" id="snake"><img src="img/face.png"></div>
+		<div id="world"></div>
+		<div class="enemy" id="enemy"><img src="img/enemy.gif"></div>
 		<div class="score">
 			<p>Score: <span id="score"></span></p><!-- 
 		 --><p>Lives: <span id="lives"></span></p>
@@ -19,6 +20,11 @@
 	</div>
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-lowlag.js"></script>
+	
+	<script src="js/soundmanager2-jsmin.js"></script>
+	<script src="js/soundmanager2-nodebug-jsmin.js"></script>
+
 	<script src="js/scripts.js"></script>
 </body>
 </html>

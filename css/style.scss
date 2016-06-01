@@ -17,7 +17,12 @@ div.row {
 		display: inline-block;
 	}
 	.brick {
-		background: url("../img/wall_gray.png");
+		background: rgba(0, 0, 0, 0) url("../img/wall_gray.png") repeat scroll 0 0;
+		border-bottom: 8px solid #000;
+		height: 48px;
+		margin-top: -8px;
+		position: relative;
+		z-index: 9;
 	}
 	.egg {
 		background: url("../img/egg.gif") no-repeat center;
@@ -75,13 +80,44 @@ div.row {
 	}
 }
 
+#enemy {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+
+	img {
+		margin: auto;
+		display: block;
+		position: relative;
+		top: -12px;
+		z-index: 9;
+	}
+
+	&:after {
+		content: " ";
+		width: 28px;
+		height: 15px;
+		border-radius: 50%;
+		display: block;
+		bottom: 0;
+		left: 0;
+		margin-left: 6px;
+		position: absolute;
+
+		background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.58) 48%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 100%);
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.58) 0%,rgba(0,0,0,0.58) 48%,rgba(0,0,0,0) 75%,rgba(0,0,0,0) 100%);
+		background: radial-gradient(ellipse at center, rgba(0,0,0,0.58) 0%,rgba(0,0,0,0.58) 48%,rgba(0,0,0,0) 75%,rgba(0,0,0,0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94000000', endColorstr='#00000000',GradientType=1 );
+	}
+}
+
 .segment,
 #snake {
 	border-radius: 50%;
 	width: 36px;
 	height: 36px;
 	position: absolute;
-	z-index: 99;
+	z-index: 0;
 	margin-top: 1.5px;
 	margin-left: 1.5px;
 }

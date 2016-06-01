@@ -1,45 +1,52 @@
+lowLag.init({
+	'sm2url': '/swf/',
+	'urlPrefix':'fx/'
+});
+lowLag.load('game_over.wav');
+lowLag.load('beep.wav');
+lowLag.load('death.wav');
 
 var world = [
-	[
-		[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-		[2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,0,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,0,2,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,0,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,2,2,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,2,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,2,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
-	],
-	[
-		[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
-		[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
-	]
+[
+[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+[2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,0,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,0,2,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,0,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,2,2,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,2,2,2,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,2,0,0,0,1,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,2,2,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+],
+[
+[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+]
 ];
 
 var snake = {
@@ -47,6 +54,13 @@ var snake = {
 	y: 1
 }
 
+var enemy = {
+	x: 28,
+	y: 1,
+	d: [0,1,2,3]
+}
+
+var game_active = true;
 var score = 0;
 var seg = 0;
 var lives = 3;
@@ -55,6 +69,11 @@ var current_world = 0;
 function displaySnake() {
 	$('#snake').css('left', snake.x * 40);
 	$('#snake').css('top', snake.y * 40);
+}
+
+function displayEnemy() {
+	$('#enemy').css('left', enemy.x * 40);
+	$('#enemy').css('top', enemy.y * 40);
 }
 
 function buildWorld() {
@@ -66,29 +85,32 @@ function buildWorld() {
 			
 			switch( world[current_world][i][j] ) {
 				case 0:
-					output += "<div class='empty'></div>";
-					break;
+				output += "<div class='empty'></div>";
+				break;
 				case 1:
-					output += "<div class='item'><img src='img/orb.gif'></div>";
-					break;
+				output += "<div class='item'><img src='img/orb.gif'></div>";
+				break;
 				case 2:
-					output += "<div class='brick'></div>";
-					break;
+				output += "<div class='brick'></div>";
+				break;
 				case 3:
-					output += "<div class='snake'></div>";
-					break;
+				output += "<div class='snake'></div>";
+				break;
 				case 4:
-					output += "<div class='ghost'></div>";
-					break;
+				output += "<div class='ghost'></div>";
+				break;
 				case 5:
-					output += "<div class='bonus'></div>";
-					break;
+				output += "<div class='bonus'></div>";
+				break;
+				case 7:
+				output += "<div class='enemy_box'></div>";
+				break;
 				case 8:
-					output += "<div class='gap'></div>";
-					break;
+				output += "<div class='gap'></div>";
+				break;
 				case 9:
-					output += "<div class='segment_box'></div>";
-					break;
+				output += "<div class='segment_box'></div>";
+				break;
 			}
 
 		}
@@ -110,6 +132,7 @@ function updateLives(num) {
 
 buildWorld();
 displaySnake();
+displayEnemy();
 updateScore(0);
 updateLives(0);
 
@@ -131,25 +154,33 @@ function shrink(){
 	}
 }
 
-function death() {
-	alert("No moves left!");
+function death(num) {
+	lowLag.play('death.wav');
+	if ( num == 1 ) {
+		alert('You were killed!');
+	} else {
+		alert("No moves left!");
+	}
 	updateLives(-1);
 	if ( lives == 0 ) {
 		// Game over
-		alert("No more lives! \n\n Game over!!");
+		lowLag.play('game_over.wav');
+		alert("Game over!!");
 		document.onkeydown = function(e) {
 			if ( e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 ) {
 				e.preventDefault();
 			}
 		}
 		$('#snake').remove();
+		$('#enemy').remove();
+		$('.item img').remove();
 		$('.segment').remove();
 	} else {
 		// Respawn
 		$('.segment').remove();
 		for (var i = 0; i < world[current_world].length; i++) {
 			for (var j = 0; j < world[current_world][i].length; j++) {
-				if ( world[current_world][i][j] == 9 ) {
+				if ( world[current_world][i][j] == 9 || world[current_world][i][j] == 7) {
 					world[current_world][i][j] = 0;
 				}
 			}
@@ -178,16 +209,82 @@ function win() {
 		current_world += 1;
 		buildWorld();
 		displaySnake();
+		enemy.y = 28;
+		enemy.x = 1;
+		displayEnemy();
 	}
 }
 
+function moveEnemy() {
+
+	if ( game_active ) {
+
+		var random = Math.floor(Math.random() * 4);
+
+		console.log(random);
+
+		switch (random) {
+			case 0:
+			if ( world[current_world][enemy.y - 1][enemy.x] != 2 ) {
+				world[current_world][enemy.y][enemy.x] = 0;
+				enemy.y -= 1;
+				displayEnemy();
+			} else {
+				console.log("Can't go up!");
+			}
+			break;
+			case 1:
+			if ( world[current_world][enemy.y + 1][enemy.x] != 2 ) {
+				world[current_world][enemy.y][enemy.x] = 0;
+				enemy.y += 1;
+				displayEnemy();
+			} else {
+				console.log("Can't go down!");
+			}
+			break;
+			case 2:
+			if ( world[current_world][enemy.y][enemy.x - 1] != 2 ) {
+				world[current_world][enemy.y][enemy.x] = 0;
+				enemy.x -= 1;
+				displayEnemy();
+			} else {
+				console.log("Can't go left!");
+			}
+			break;
+			case 3:
+			if ( world[current_world][enemy.y][enemy.x + 1] != 2 ) {
+				world[current_world][enemy.y][enemy.x] = 0;
+				enemy.x += 1;
+				displayEnemy();
+			} else {
+				console.log("Can't go right!");
+			}
+			break;
+		}
+
+		world[current_world][enemy.y][enemy.x] = 7;
+		buildWorld();
+
+		if ( world[current_world][enemy.y][enemy.x] == 9 ) {
+			death(1);
+		}
+		if ( world[current_world][enemy.y][enemy.x] == world[current_world][snake.y][snake.x] ) {
+			death(1);
+		}
+
+	}
+}
+
+setInterval(moveEnemy, 500);
+
 document.onkeydown = function(e) {
-	switch (e.keyCode) {
-		case 38:
+		if ( e.keyCode == 38 ) {
+			e.preventDefault();
 			// Up
 			if ( world[current_world][snake.y - 1][snake.x] != 2 && world[current_world][snake.y - 1][snake.x] != 9 ) {
 				if ( world[current_world][snake.y - 1][snake.x] == 1 ) {
 					// Grow
+					lowLag.play('beep.wav');
 					grow();
 					snake.y -= 1;
 				} else {
@@ -197,12 +294,14 @@ document.onkeydown = function(e) {
 					snake.y -= 1;
 				}
 			}
-			break;
-		case 40:
+		}
+		if ( e.keyCode == 40 ) {
+			e.preventDefault();
 			// Down
 			if ( world[current_world][snake.y + 1][snake.x] != 2 && world[current_world][snake.y + 1][snake.x] != 9 ) {
 				if ( world[current_world][snake.y + 1][snake.x] == 1 ) {
 					// Grow
+					lowLag.play('beep.wav');
 					grow();
 					snake.y += 1;
 				} else {
@@ -211,12 +310,14 @@ document.onkeydown = function(e) {
 					snake.y += 1;
 				}
 			}
-			break;
-		case 37:
+		}
+		if ( e.keyCode == 37 ) {
+			e.preventDefault();
 			// Left
 			if ( world[current_world][snake.y][snake.x - 1] != 2 && world[current_world][snake.y][snake.x - 1] != 9 ) {
 				if ( world[current_world][snake.y][snake.x - 1] == 1 ) {
 					// Grow
+					lowLag.play('beep.wav');
 					grow();
 					snake.x -= 1;
 				} else {
@@ -225,12 +326,14 @@ document.onkeydown = function(e) {
 					snake.x -= 1;
 				}
 			}
-			break;
-		case 39:
+		}
+		if ( e.keyCode == 39 ) {
+			e.preventDefault();
 			// Right
 			if ( world[current_world][snake.y][snake.x + 1] != 2 && world[current_world][snake.y][snake.x + 1] != 9 ) {
 				if ( world[current_world][snake.y][snake.x + 1] == 1 ) {
 					// Grow
+					lowLag.play('beep.wav');
 					grow();
 					snake.x += 1;
 				} else {
@@ -239,18 +342,22 @@ document.onkeydown = function(e) {
 					snake.x += 1;
 				}
 			}
-			break;
-	}
-	if ( world[current_world][snake.y][snake.x] == 1) {
-		world[current_world][snake.y][snake.x] = 0;
-		buildWorld();
-		updateScore(100);
-	}
+		}
 
-	displaySnake();
-	win();
-	
-	if ( 
+		if ( world[current_world][snake.y][snake.x] == 1) {
+			world[current_world][snake.y][snake.x] = 0;
+			buildWorld();
+			updateScore(100);
+		}
+
+		if ( world[current_world][snake.y][snake.x] == 7 ) {
+			death(1);
+		}
+
+		displaySnake();
+		win();
+
+		if ( 
 		// Top
 		(world[current_world][snake.y - 1][snake.x] == 9 || world[current_world][snake.y - 1][snake.x] == 2) &&
 
@@ -264,7 +371,7 @@ document.onkeydown = function(e) {
 		(world[current_world][snake.y][snake.x + 1] == 9 || world[current_world][snake.y][snake.x + 1] == 2)
 
 		) {
-		console.log('top: '+world[current_world][snake.y - 1][snake.x]+'\nleft: '+world[current_world][snake.y][snake.x - 1]+'\nright: '+world[current_world][snake.y][snake.x + 1]+'\nbottom: '+world[current_world][snake.y + 1][snake.x]);
+			console.log('top: '+world[current_world][snake.y - 1][snake.x]+'\nleft: '+world[current_world][snake.y][snake.x - 1]+'\nright: '+world[current_world][snake.y][snake.x + 1]+'\nbottom: '+world[current_world][snake.y + 1][snake.x]);
 		death();
 	}
 }
